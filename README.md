@@ -1,4 +1,7 @@
-# nhdpy 
+# nhdpy
+
+[![PyPiVersion](https://img.shields.io/pypi/v/nhdpy.svg)](https://pypi.python.org/pypi/nhdpy/) [![PYPI Downloads](https://img.shields.io/pypi/dm/nhdpy.svg)](https://pypistats.org/packages/nhdpy) [![Build Status](https://travis-ci.org/jsta/nhdpy.svg?branch=master)](https://travis-ci.org/jsta/nhdpy) 
+
 
 A python port of the [nhdR](https://jsta.github.io/nhdR) package for querying, downloading, and networking the [National
 Hydrography Dataset (NHD)](https://nhd.usgs.gov/) dataset.
