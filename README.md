@@ -18,5 +18,7 @@ make install
 ``` python
 import nhdpy
 
-nhdpy.nhd_get("DC")
+nhdpy.nhd_get(state = "DC")
+
+nhdpy.nhd_list(state = "DC")
 ```
