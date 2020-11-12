@@ -6,6 +6,7 @@ from requests import HTTPError
 import pandas as pd
 import appdirs
 import os
+import zipfile
 
 def nhd_path():
     return appdirs.user_data_dir() + "/nhdR/"
@@ -69,9 +70,4 @@ def nhd_get(state, force_dl = False):
 
     get_if_not_exists(url, destfile, force_dl = force_dl)
 
-#     unzip(destfile, exdir = nhd_path())
-
-#     if(is_gpkg_installed()){
-#       compile_gpkg(state)
-#     }
-#   }
+    zipfile.ZipFile(destfile.iloc[0]).extractall(path = os.path.dirname(destfile.iloc[0]))
