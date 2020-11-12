@@ -21,4 +21,10 @@ import nhdpy
 nhdpy.nhd_get(state = "DC")
 
 nhdpy.nhd_list(state = "DC")
+
+dc_waterbodies = nhdpy.nhd_load("DC", "NHDWaterbody")
+
+# import matplotlib.pyplot as plt
+# dc_waterbodies.iloc[1:2].plot()
+# plt.show()
 ```

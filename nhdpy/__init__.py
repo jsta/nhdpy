@@ -6,3 +6,5 @@ __version__ = '0.1.0'
 
 from .nhdpy import nhd_get
 from .nhdpy import nhd_list
+from .nhdpy import nhd_load
+

@@ -1,3 +1,5 @@
 pandas
 appdirs
 requests
+geopandas
+descartes
