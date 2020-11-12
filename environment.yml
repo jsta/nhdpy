@@ -1,0 +1,8 @@
+name: nhdpy
+dependencies:
+  - python
+  - anaconda
+  - pip
+  - pip:
+    - -r file:requirements.txt
+

@@ -11,9 +11,9 @@ def nhd_path():
     return appdirs.user_data_dir() + "/nhdR/"
 
 # cribbed from the 'nhdnet' package (https://github.com/brendan-ward/nhdnet)
-def get_if_not_exists(url, destfile, force_dl = FALSE):
+def get_if_not_exists(url, destfile, force_dl = False):
     if force_dl:
-        print "Re-downloading " + url        
+        print("Re-downloading " + url)
         with requests.get(url.iloc[0], stream=True) as r:
             if not r.status_code == 200:
                 raise HTTPError("Could not download {}".url.iloc[0])
@@ -25,12 +25,12 @@ def get_if_not_exists(url, destfile, force_dl = FALSE):
                 )                
                 copyfileobj(r.raw, out)
 
-    if not os.path.exists(destfile):
-        print "Downloading " + url
+    if not os.path.exists(destfile.iloc[0]):
+        print("Downloading " + url)
         with requests.get(url.iloc[0], stream=True) as r:
             if not r.status_code == 200:
                 raise HTTPError("Could not download {}".url.iloc[0])
-            with open(destfile, "wb") as out:
+            with open(destfile.iloc[0], "wb") as out:
                 print(
                     "Downloading: {url} ({size:.2f} MB)".format(
                         url=url.iloc[0], size=int(r.headers["Content-Length"]) / 1024 ** 2
@@ -38,14 +38,14 @@ def get_if_not_exists(url, destfile, force_dl = FALSE):
                 )                
                 copyfileobj(r.raw, out)
     else:
-        print("A local copy of " + url + " already exists on disk")  
+        print("A local copy of " + url.iloc[0] + " already exists on disk")  
 
 def get_remotepath(state, baseurl):    
     filename = "NHD_H_" + state + "_State_GDB.zip"
     url = baseurl + "GDB/" + filename
     return [filename, url]
 
-def nhd_get(state):
+def nhd_get(state, force_dl = False):
     """Download and cache NHD data by state
     
     Parameters
