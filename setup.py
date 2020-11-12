@@ -7,9 +7,6 @@ from setuptools import setup, find_packages
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
-
 requirements = [ ]
 
 setup_requirements = [ ]
@@ -34,7 +31,7 @@ setup(
     description="A python port of the nhdR package for querying, downloading, and networking the National Hydrography Dataset (NHD) dataset",
     install_requires=requirements,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=readme + '\n\n',
     include_package_data=True,
     keywords='nhdpy',
     name='nhdpy',
