@@ -32,6 +32,7 @@ setup(
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n',
+    long_description_content_type="text/markdown",
     include_package_data=True,
     keywords='nhdpy',
     name='nhdpy',
