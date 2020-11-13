@@ -10,7 +10,18 @@ Hydrography Dataset (NHD)](https://nhd.usgs.gov/) dataset.
 
 ```
 conda env create -n nhdpy -f environment.yml
-make install
+```
+
+```
+# local install
+# pip install -e  .
+
+# development install
+pip install git+git://github.com/jsta/nhdpy.git
+
+# development upgrade
+# pip install --upgrade git+git://github.com/jsta/nhdpy.git
+
 ```
 
 ## Usage
