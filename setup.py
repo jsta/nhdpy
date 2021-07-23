@@ -14,7 +14,7 @@ setup_requirements = [ ]
 test_requirements = [ ]
 
 setup(
-    author="Joseph Stachelek",
+    author="Jemma Stachelek",
     author_email='stachel2@msu.edu',
     python_requires='>=3.5',
     classifiers=[
