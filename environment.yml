@@ -1,7 +1,7 @@
 name: nhdpy
 dependencies:
-  - python  
-  - pip
-  - pip:
-    - -r file:requirements.txt
-
+  - python
+  - pandas
+  - appdirs
+  - requests
+  - geopandas
