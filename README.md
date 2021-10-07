@@ -25,7 +25,7 @@ pip install git+git://github.com/jsta/nhdpy.git
 
 ## Usage
 
-``` python
+```python
 import nhdpy
 
 nhdpy.nhd_get(state = "DC")
