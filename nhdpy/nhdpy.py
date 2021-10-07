@@ -17,28 +17,28 @@ def key_state(state):
     return key[key.sabb.eq(state)]['sname'].astype('string').iloc[0]
 
 def nhd_path():
-    return appdirs.user_data_dir() + "/nhdR/"
+    nhd_path = appdirs.user_data_dir() + "/nhdR/"
+    os.makedirs(nhd_path, exist_ok=True)
+    return nhd_path
 
 def gdb_path(state):
     return os.path.join(nhd_path(), "NHD_H_" + key_state(state) + "_State_GDB.gdb")
 
 # cribbed from the 'nhdnet' package (https://github.com/brendan-ward/nhdnet)
 def get_if_not_exists(url, destfile, force_dl = False):
-    if force_dl:
-        print("Re-downloading " + url)
+    if force_dl:        
         with requests.get(url, stream=True) as r:
             if not r.status_code == 200:
                 raise HTTPError("Could not download {}".url)
             with open(destfile, "wb") as out:
                 print(
-                    "Downloading: {url} ({size:.2f} MB)".format(
+                    "Re-downloading: {url} ({size:.2f} MB)".format(
                         url=url, size=int(r.headers["Content-Length"]) / 1024 ** 2
                     )
                 )                
                 copyfileobj(r.raw, out)
 
-    if not os.path.exists(destfile):
-        print("Downloading " + url)
+    if not os.path.exists(destfile):        
         with requests.get(url, stream=True) as r:
             if not r.status_code == 200:
                 raise HTTPError("Could not download {}".url)
